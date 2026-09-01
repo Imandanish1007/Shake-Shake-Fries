@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shake Shake Fries | Eyes On Your Fries</title>
+  <meta name="description" content="Shake Shake Fries - crispy fries with your favourite flavours. RM5 each.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-fries">🍟</span>
+      <span>SHAKE SHAKE<br><b>FRIES</b></span>
+    </a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+    </nav>
+    <a class="nav-order" href="#order">ORDER NOW</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">WORLD FAMOUS &amp; SHAKIN' IT!</p>
+        <h1>GET YOUR<br><span>SHAKE</span> ON!</h1>
+        <p class="hero-text">Crispy fries. Bold flavours. Shake it, mix it, love it.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#menu">VIEW MENU</a>
+          <a class="btn secondary" href="#order">ORDER NOW</a>
+        </div>
+        <div class="price-pill">ALL FLAVOURS <strong>RM5</strong></div>
+      </div>
+      <div class="hero-visual">
+        <div class="burst">RM5<br><small>EACH</small></div>
+        <img src="assets/menu-poster.png" alt="Shake Shake Fries menu poster">
+      </div>
+    </section>
+
+    <section id="menu" class="section menu-section">
+      <div class="section-heading">
+        <p class="eyebrow">OUR FLAVOURS</p>
+        <h2>Pick Your <span>Favourite</span></h2>
+        <p>Choose your flavour, shake it up and enjoy!</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <div class="flavour-icon spicy">🌶️</div>
+          <h3>Hot Spicy</h3>
+          <p>For those who like their fries with a fiery kick.</p>
+          <div class="card-bottom"><span>RM5</span><button onclick="addItem('Hot Spicy')">ADD +</button></div>
+        </article>
+
+        <article class="menu-card">
+          <div class="flavour-icon cheese">🧀</div>
+          <h3>Cheese</h3>
+          <p>Rich, cheesy flavour that makes every bite better.</p>
+          <div class="card-bottom"><span>RM5</span><button onclick="addItem('Cheese')">ADD +</button></div>
+        </article>
+
+        <article class="menu-card">
+          <div class="flavour-icon sour">🧅</div>
+          <h3>Sour Cream &amp; Onion</h3>
+          <p>Creamy, tangy and savoury in every shake.</p>
+          <div class="card-bottom"><span>RM5</span><button onclick="addItem('Sour Cream & Onion')">ADD +</button></div>
+        </article>
+
+        <article class="menu-card">
+          <div class="flavour-icon ring">⭕</div>
+          <h3>Super Ring</h3>
+          <p>Cheesy snack flavour with an extra fun crunch.</p>
+          <div class="card-bottom"><span>RM5</span><button onclick="addItem('Super Ring')">ADD +</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="about-image">
+        <img src="assets/menu-poster.png" alt="Shake Shake Fries">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT US</p>
+        <h2>Eyes On Your <span>Fries</span></h2>
+        <p>Shake Shake Fries brings crispy, tasty fries together with exciting flavours at an affordable price.</p>
+        <p>Just choose your favourite flavour, give it a good shake and enjoy your fries!</p>
+        <div class="mini-features">
+          <div><b>RM5</b><small>PER CUP</small></div>
+          <div><b>4</b><small>FLAVOURS</small></div>
+          <div><b>100%</b><small>SHAKE IT</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section order-section">
+      <div class="section-heading">
+        <p class="eyebrow">READY TO ORDER?</p>
+        <h2>Build Your <span>Order</span></h2>
+        <p>Add your favourite fries below.</p>
+      </div>
+
+      <div class="order-box">
+        <div class="order-list" id="orderList">
+          <p class="empty">Your order is empty. Add some fries! 🍟</p>
+        </div>
+
+        <div class="order-type">
+          <h3>Choose Order Type</h3>
+          <div class="order-options">
+            <label class="order-option active" id="pickupOption">
+              <input type="radio" name="orderType" value="Pickup" checked onchange="setOrderType('Pickup')">
+              <span class="option-icon">🏪</span>
+              <span><b>Pickup</b><small>No extra charge</small></span>
+            </label>
+            <label class="order-option" id="deliveryOption">
+              <input type="radio" name="orderType" value="Delivery" onchange="setOrderType('Delivery')">
+              <span class="option-icon">🛵</span>
+              <span><b>Delivery</b><small>+ RM2 delivery fee</small></span>
+            </label>
+          </div>
+          <div class="address-box" id="addressBox">
+            <label for="address">Delivery Address</label>
+            <textarea id="address" rows="2" placeholder="Enter your delivery address"></textarea>
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div><span>Subtotal</span><strong id="subtotal">RM0</strong></div>
+          <div class="delivery-line"><span>Delivery Fee</span><strong id="deliveryFee">RM0</strong></div>
+          <div class="grand-total"><span>Total</span><strong id="total">RM0</strong></div>
+          <button class="whatsapp-btn" onclick="sendWhatsApp()">ORDER VIA WHATSAPP</button>
+          <p class="contact">Contact: <b>012 328 1670</b> – Iman Danish</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>🍟 <strong>SHAKE SHAKE FRIES</strong></div>
+    <p>Eyes On Your Fries • Grab It While You Can!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
