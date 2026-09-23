@@ -21,6 +21,7 @@ function setOrderType(type) {
   document.getElementById("pickupOption").classList.toggle("active", type === "Pickup");
   document.getElementById("deliveryOption").classList.toggle("active", type === "Delivery");
   document.getElementById("addressBox").classList.toggle("show", type === "Delivery");
+  document.getElementById("pickupBox").classList.toggle("show", type === "Pickup");
   renderOrder();
 }
 
@@ -88,7 +89,7 @@ function sendWhatsApp() {
   const total = subtotal + fee;
   const address = orderType === "Delivery"
     ? document.getElementById("address").value.trim()
-    : "N/A – Customer will pick up";
+    : "Jalan Dato Seri Kamaruddin, Institut Kemahiran Mara Lumut, 32040 Seri Manjung, Perak";
 
   const message =
     `Hi Iman Danish! 🍟 I would like to order Shake Shake Fries:%0A%0A` +
