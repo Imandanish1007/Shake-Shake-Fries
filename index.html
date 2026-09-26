@@ -12,9 +12,8 @@
 </head>
 <body>
   <header class="navbar">
-    <a class="brand" href="#home">
-      <span class="brand-fries">🍟</span>
-      <span>SHAKE SHAKE<br><b>FRIES</b></span>
+    <a class="brand" href="#home" aria-label="Shakedown - French Fries">
+      <img src="assets/logo-shakedown.png" alt="SHAKEDOWN - French Fries logo">
     </a>
     <nav>
       <a href="#home">Home</a>
@@ -28,6 +27,7 @@
   <main>
     <section id="home" class="hero">
       <div class="hero-copy">
+        <img class="hero-logo" src="assets/logo-shakedown.png" alt="SHAKEDOWN - French Fries">
         <p class="eyebrow">WORLD FAMOUS &amp; SHAKIN' IT!</p>
         <h1>GET YOUR<br><span>SHAKE</span> ON!</h1>
         <p class="hero-text">Crispy fries. Bold flavours. Shake it, mix it, love it.</p>
@@ -126,10 +126,17 @@
           </div>
           <div class="pickup-box show" id="pickupBox">
             <label>Pickup Location</label>
-            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jalan%20Dato%20Seri%20Kamaruddin%20Institut%20Kemahiran%20Mara%20Lumut%2C%2032040%20Seri%20Manjung%2C%20Perak" target="_blank" rel="noopener noreferrer">
-              <img src="assets/pickup-map.jpg" alt="Pickup location map at Institut Kemahiran Mara Lumut">
-              <span class="map-overlay">📍 Open in Google Maps ↗</span>
-            </a>
+            <div class="map-card">
+              <div class="map-title">📍 <strong>SHAKEDOWN - French Fries</strong></div>
+              <iframe
+                class="google-map"
+                src="https://www.google.com/maps?q=Institut%20Kemahiran%20MARA%20Lumut%2C%20Jalan%20Dato%20Seri%20Kamaruddin%2C%2032040%20Seri%20Manjung%2C%20Perak&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="SHAKEDOWN - French Fries pickup location">
+              </iframe>
+              <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Institut%20Kemahiran%20MARA%20Lumut%2C%20Jalan%20Dato%20Seri%20Kamaruddin%2C%2032040%20Seri%20Manjung%2C%20Perak" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps ↗</a>
+            </div>
             <p class="pickup-address">Jalan Dato Seri Kamaruddin, Institut Kemahiran Mara Lumut,<br>32040 Seri Manjung, Perak</p>
           </div>
           <div class="address-box" id="addressBox">
